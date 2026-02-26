@@ -12,7 +12,8 @@ architecture Behavior of tb_alu_8bit is
          opcode : in  std_logic_vector(3 downto 0);
          res    : out std_logic_vector(15 downto 0);
          zf     : out std_logic;
-         sf     : out std_logic
+         sf     : out std_logic;
+         cf     : out std_logic
         );
     end component;
     signal a      : std_logic_vector(7 downto 0) := (others => '0');
@@ -21,6 +22,7 @@ architecture Behavior of tb_alu_8bit is
     signal res    : std_logic_vector(15 downto 0);
     signal zf     : std_logic;
     signal sf     : std_logic;
+    signal cf     : std_logic;
     constant clock_period : time := 100 ps;
     signal clk : std_logic := '0';
 begin
@@ -30,7 +32,8 @@ begin
           opcode => opcode, 
           res => res, 
           zf => zf, 
-          sf => sf
+          sf => sf,
+          cf => cf
         );
     clk_process :process
     begin
