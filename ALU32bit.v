@@ -57,25 +57,25 @@ end
 6'b11_1100:res = {a<<b[4:0]};
 6'b10_0001:res = {a>>b[4:0]};
 6'b10_1001:res = {b<<a[4:0]};
-6'b00_0001:res = {b>>a[4:0]};
+6'b00_1001:res = {b>>a[4:0]};
 
 //arithmetic shift operations
 6'b10_1010:res = {$signed(a)>>>b[4:0]};
 6'b10_0110:res = {$signed(a)<<<b[4:0]};
 6'b00_0111:res = {$signed(b)>>>a[4:0]};
-6'b00_1100:res = {$signed(b)<<<a[4:0]};
+6'b00_1101:res = {$signed(b)<<<a[4:0]};
 
 //rotational operations
 6'b11_1001:res = {(a>>b[4:0])|(a<<(32 - b[4:0]))};
 6'b11_1000:res = {(a<<b[4:0])|(a>>(32 - b[4:0]))};
 6'b11_0001:res = {(b>>a[4:0])|(b<<(32 - a[4:0]))};
-6'b10_1001:res = {(b<<a[4:0])|(b>>(32 - a[4:0]))};
+6'b11_1011:res = {(b<<a[4:0])|(b>>(32 - a[4:0]))};
 
 //default case
-default:res = 31'd0;
+default:res = 32'd0;
 
 endcase
-zf = (res == 31'd0)?1'b1:1'b0;
+zf = (res == 32'd0)?1'b1:1'b0;
 sf = res[31];
 end 
 endmodule
