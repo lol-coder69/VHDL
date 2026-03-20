@@ -10,6 +10,7 @@ output reg cf
 
 always @(*)begin
 cf = 1'b0;
+
 case(opcode)
 //arithmetic operations
 6'b00_0000:res = a*b;
