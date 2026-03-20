@@ -1,7 +1,7 @@
 module alu32bit(
 input [31:0] a,
 input [31:0] b,
-  input [5:0] opcode,//6 bit opcode for operations
+input [5:0] opcode,//6 bit opcode for operations
 output reg [63:0]res,
 output reg zf,
 output reg sf,
