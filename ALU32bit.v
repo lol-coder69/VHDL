@@ -62,10 +62,10 @@ end
 6'b10_1001:res = {(b<<a[4:0])|(b>>(32 - a[4:0]))};
 
 //default case
-default:res = 64'd0;
+default:res = 32'd0;
 
 endcase
-zf = (res == 64'd0)?1'b1:1'b0;
-sf = res[63];
+  zf = (res == 32'd0)?1'b1:1'b0;
+  sf = res[31];
 end 
 endmodule
