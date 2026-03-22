@@ -9,6 +9,8 @@ output reg sf, //sign flag
 output reg cf, //carry flag
 output reg lt, //less than
 output reg gt, //greater than
+output reg ult, //less than (for unsigned integers)
+output reg ugt, //greater than (for unsigned integers)
 output reg eq //equal to
 );
 
@@ -19,10 +21,12 @@ assign Sn_Product = ($signed(a)*$signed(b));
 
 always @(*)begin
 cf = 1'b0;
-lt = 1'b0;
-gt = 1'b0;
-eq = 1'b0;
 res_High = 32'd0;
+eq = (a == b);
+lt = ($signed(a) < $signed(b)); 
+gt = ($signed(a) > $signed(b));
+ult = (a < b);
+ugt = (a > b);
 
 case(opcode)
 //arithmetic operations
