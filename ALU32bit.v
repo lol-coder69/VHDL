@@ -10,7 +10,6 @@ output reg cf, //carry flag
 output reg lt, //less than
 output reg gt, //greater than
 output reg eq, //equal to
-integer i
 );
 
 wire [63:0] Product;
