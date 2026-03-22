@@ -12,7 +12,7 @@ c_out:out STD_LOGIC
 end RippleAdder4;
 
 architecture Structural of RippleAdder4 is
-component fullAdder //implements fullAdder entity from FullAdder.vhd
+component fullAdder --implements fullAdder entity from FullAdder.vhd
 Port(
 a:in STD_LOGIC;
 b:in STD_LOGIC;
@@ -25,7 +25,7 @@ end component;
 signal c0:STD_LOGIC;
 signal c1:STD_LOGIC;
 signal c2:STD_LOGIC;
-//use 4 fulladder logic circuit for the ripple adder
+--use 4 fulladder logic circuit for the ripple adder
 begin
 fa0:fullAdder Port Map(
 a => a(0),
